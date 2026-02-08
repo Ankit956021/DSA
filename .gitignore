@@ -1,0 +1,19 @@
+# Compiled binaries
+*.o
+*.out
+*.dSYM/
+
+# Executables (without extension)
+new
+dsa
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store
