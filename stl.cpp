@@ -3,6 +3,9 @@
 #include<list>
 #include<stack>
 #include<queue>
+#include<set>
+
+
 using namespace std;
 
 
@@ -100,6 +103,62 @@ void explainQueue(){
     cout << q.front() << endl;  // Output: 2    
 }
 
+void expPriorityQueue(){
+    priority_queue<int> p;
+    p.push(10);
+    p.push(20);
+    p.push(5);
+    p.emplace(15);  // Adds 15 to the priority queue
+    cout << p.top() << endl;  // Output: 20 (the largest element in the priority queue)
+    p.pop();  // Removes the top element (20)
+    cout << p.top() << endl;  // Output: 15 (the next largest element in the priority queue) 
+    
+    priority_queue<int, vector<int>, greater<int>> minHeap;  // This creates a min-heap (priority queue that gives the smallest element)
+    minHeap.push(10);
+    minHeap.push(20);
+    minHeap.push(5);
+    cout << minHeap.top() << endl;  // Output: 5 (the smallest element in the min-heap)
+    minHeap.pop();  // Removes the top element (5)
+    cout << minHeap.top() << endl;  // Output: 10 (the next smallest element in the min-heap)
+
+
+}
+
+void expSet(){
+    // Set is a container in C++ that stores unique elements in a sorted manner. It is implemented as a balanced binary search tree (like a Red-Black Tree) and provides logarithmic time complexity for insertion, deletion, and search operations. 
+    // Common operations include insert (to add an element), erase (to remove an element), find (to check if an element exists), and traversal using iterators.
+
+    // Example usage:
+    // set<int> mySet;
+    // mySet.insert(3);  // Adds 3 to the set
+    // mySet.insert(1);  // Adds 1 to the set
+    // mySet.insert(2);  // Adds 2 to the set
+    // for (auto it = mySet.begin(); it != mySet.end(); ++it) {
+    //     cout << *it << " ";  // Output: 1 2 3 (elements are stored in sorted order)
+    // }
+    set<int> s;
+    s.insert(3);
+    s.insert(1);
+    s.insert(2);
+    s.emplace(4);  // Adds 4 to the set
+     for (auto it = s.begin(); it != s.end(); ++it) {
+        cout << *it << " ";  // Output: 1 2 3 4 (elements are stored in sorted order)
+    }
+     cout<<endl;
+
+    set<int> s2;
+    s2.emplace(5);
+    s2.emplace(1);
+
+    auto it = s2.find(1);
+    if (it != s2.end()) {
+        cout << "Element 1 found in the set." << endl;  // Output: Element 1 found in the set.
+    } else {
+        cout << "Element 1 not found in the set." << endl; 
+    }
+
+    
+}
 
 
 int main(){
@@ -117,6 +176,14 @@ int main(){
 
     explainQueue();
 
+    cout<<"------------------"<<endl;
+
+    expPriorityQueue();
+
+    cout<<"------------------"<<endl;
+
+    expSet();
+    
     cout<<"------------------"<<endl;
     return 0;
 }
