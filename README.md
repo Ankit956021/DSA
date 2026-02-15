@@ -33,10 +33,48 @@ Classic pattern printing problems to master nested loops and logic building.
 Understanding C++ STL containers and their operations.
 
 #### Topics Covered:
-- 📦 **Vector**: Dynamic arrays with push_back, insert, erase
+- 📦 **Vector**: Dynamic arrays with push_back, insert, erase, emplace_back
 - 📋 **List**: Doubly linked lists with front/back operations
-- 📚 **Stack**: LIFO (Last In First Out) data structure
-- 🔄 **Queue**: FIFO (First In First Out) operations
+- 📚 **Stack**: LIFO (Last In First Out) - push, pop, top
+- 🔄 **Queue**: FIFO (First In First Out) - push, pop, front, back
+- ⚡ **Priority Queue**: Max Heap & Min Heap with priority ordering
+- 🎯 **Set**: Sorted unique elements with O(log n) operations
+
+#### Code Examples:
+```cpp
+// Vector
+vector<int> v;
+v.push_back(1);
+v.insert(v.begin() + 1, 20);  // Insert at position
+
+// Stack (LIFO)
+stack<int> st;
+st.push(10);
+cout << st.top();  // Output: 10
+
+// Queue (FIFO)
+queue<int> q;
+q.push(1);
+q.push(2);
+cout << q.front();  // Output: 1
+
+// Priority Queue (Max Heap by default)
+priority_queue<int> pq;
+pq.push(5);
+pq.push(10);
+cout << pq.top();  // Output: 10
+
+// Min Heap
+priority_queue<int, vector<int>, greater<int>> minHeap;
+minHeap.push(5);
+cout << minHeap.top();  // Output: 5
+
+// Set (Sorted & Unique)
+set<int> s;
+s.insert(3);
+s.insert(1);
+auto it = s.find(1);  // O(log n) search
+```
 
 ### 3. **Utility Programs**
 - `new.cpp` - Basic input/output programs
@@ -117,9 +155,20 @@ dsa/
 
 ### STL
 - 📦 Dynamic memory & containers
-- 📦 Iterator usage
+- 📦 Iterator usage & traversal
 - 📦 Container operations (push, pop, insert, erase)
-- 📦 Time complexity considerations
+- 📦 Time complexity considerations:
+  - **Vector**: O(1) push_back, O(n) insert
+  - **List**: O(1) insert/delete, O(n) search
+  - **Stack/Queue**: O(1) push/pop
+  - **Priority Queue**: O(log n) push/pop
+  - **Set**: O(log n) insert/search/delete
+
+### Iterator Concepts
+- **`.begin()`** - Points to first element
+- **`.end()`** - Points after last element (boundary marker)
+- **`*it`** - Dereference to get value
+- **`++it`** - Move to next element
 
 ---
 
@@ -193,14 +242,19 @@ If you're learning DSA and found this repo helpful:
 
 ## 📈 Progress Tracker
 
-| Topic | Status | Date |
-|-------|--------|------|
-| Patterns 1-10 | ✅ Complete | Feb 2026 |
-| Patterns 11-20 | ✅ Complete | Feb 2026 |
-| STL Basics | ✅ Complete | Feb 2026 |
-| Arrays & Strings | 🔄 In Progress | - |
-| Linked Lists | 🔲 Not Started | - |
-| Trees | 🔲 Not Started | - |
+| Topic | Status | Files | Date |
+|-------|--------|-------|------|
+| **Patterns 1-10** | ✅ Complete | `dsa_patterns.cpp` | Feb 2026 |
+| **Patterns 11-20** | ✅ Complete | `dsa_patterns.cpp` | Feb 2026 |
+| **Vector** | ✅ Complete | `stl.cpp` | Feb 2026 |
+| **List** | ✅ Complete | `stl.cpp` | Feb 2026 |
+| **Stack** | ✅ Complete | `stl.cpp` | Feb 2026 |
+| **Queue** | ✅ Complete | `stl.cpp` | Feb 2026 |
+| **Priority Queue** | ✅ Complete | `stl.cpp` | Feb 15, 2026 |
+| **Set** | ✅ Complete | `stl.cpp` | Feb 15, 2026 |
+| **Arrays & Strings** | 🔄 In Progress | - | - |
+| **Linked Lists** | 🔲 Not Started | - | - |
+| **Trees** | 🔲 Not Started | - | - |
 
 ---
 
@@ -232,4 +286,4 @@ This repository is open for educational purposes. Feel free to use, modify, and 
 
 ---
 
-Last Updated: **14 February 2026**
+Last Updated: **15 February 2026** | Total Commits: 4 | Files: 6
