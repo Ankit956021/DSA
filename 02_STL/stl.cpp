@@ -4,6 +4,9 @@
 #include<stack>
 #include<queue>
 #include<set>
+#include<map>
+#include<unordered_map>
+#include<unordered_set>
 
 
 using namespace std;
@@ -160,6 +163,116 @@ void expSet(){
     
 }
 
+void expMultiset(){
+    // Multiset is a container in C++ that stores multiple occurrences of elements in a sorted manner. It is similar to a set, but allows for duplicate elements. 
+    // It is implemented as a balanced binary search tree (like a Red-Black Tree) and provides logarithmic time complexity for insertion, deletion, and search operations. 
+    // Common operations include insert (to add an element), erase (to remove an element), find (to check if an element exists), and traversal using iterators.
+
+    // Example usage:
+    // multiset<int> myMultiset;
+    // myMultiset.insert(3);  // Adds 3 to the multiset
+    // myMultiset.insert(1);  // Adds 1 to the multiset
+    // myMultiset.insert(2);  // Adds 2 to the multiset
+    // myMultiset.insert(3);  // Adds another 3 to the multiset
+    // for (auto it = myMultiset.begin(); it != myMultiset.end(); ++it) {
+    //     cout << *it << " ";  // Output: 1 2 3 3 (elements are stored in sorted order, duplicates allowed)
+    // }
+
+    cout<<"this is multiset"<<endl;
+    multiset<int> ms;
+    ms.insert(3);
+    ms.insert(1);
+    ms.insert(2);       
+    ms.insert(3);  // Adds another 3 to the multiset
+     for (auto it = ms.begin(); it != ms.end(); ++it) {
+        cout << *it << " ";  // Output: 1 2 3 3 (elements are stored in sorted order, duplicates allowed)
+    }
+     cout<<endl;
+
+     ms.erase(3);  // Removes all occurrences of 3 from the multiset
+     for (auto it = ms.begin(); it != ms.end(); ++it) {
+        cout << *it << " ";  // Output: 1 2 (all occurrences of 3 have been removed)
+    }
+     cout<<endl;
+
+
+}   
+
+void expUnorder_set(){
+    unordered_set<int> ors;
+    //same as set but there is no order it will not sort.
+}
+
+
+void expMap(){
+    // Map stores KEY-VALUE pairs in sorted order (by KEY)
+    // Each KEY is unique, but VALUES can be duplicate
+    // Internally implemented as Red-Black Tree (Balanced BST)
+    // Time Complexity: O(log n) for insert, find, erase
+    
+    map<int, int> mpp;
+    
+    // Method 1: Using insert with pair
+    mpp.insert({1, 10});      // Key: 1, Value: 10
+    mpp.insert({2, 20});
+    
+    // Method 2: Using emplace (constructs in-place)
+    mpp.emplace(3, 30);       // Key: 3, Value: 30
+    
+    // Method 3: Using [] operator (most common)
+    mpp[4] = 40;              // Key: 4, Value: 40
+    mpp[5] = 50;
+    
+    // Accessing values
+    cout << "Value at key 1: " << mpp[1] << endl;  // Output: 10
+    
+    // Print all key-value pairs (sorted by key)
+    cout << "Map contents (key -> value):" << endl;
+    for(auto it : mpp){
+        cout << it.first << " -> " << it.second << endl;
+    }
+    cout << endl;
+    
+    // Using iterator
+    cout << "Using iterator:" << endl;
+    for(auto it = mpp.begin(); it != mpp.end(); ++it){
+        cout << it->first << " -> " << it->second << endl;
+    }
+    cout << endl;
+    
+    // Find a key
+    auto it = mpp.find(3);
+    if(it != mpp.end()){
+        cout << "Key 3 found with value: " << it->second << endl;
+    } else {
+        cout << "Key 3 not found" << endl;
+    }
+    
+    // Check if key exists
+    if(mpp.count(5)){
+        cout << "Key 5 exists!" << endl;
+    }
+    
+    // Erase a key
+    mpp.erase(2);
+    cout << "After erasing key 2:" << endl;
+    for(auto it : mpp){
+        cout << it.first << " -> " << it.second << endl;
+    }
+    cout << endl;
+    
+    // Map with string keys
+    map<string, int> studentMarks;
+    studentMarks["Ankit"] = 95;
+    studentMarks["Raj"] = 87;
+    studentMarks["Priya"] = 92;
+    
+    cout << "Student marks:" << endl;
+    for(auto it : studentMarks){
+        cout << it.first << ": " << it.second << endl;
+    }
+    cout << endl;
+}
 
 int main(){
     vectorexp();
@@ -183,6 +296,14 @@ int main(){
     cout<<"------------------"<<endl;
 
     expSet();
+    
+    cout<<"------------------"<<endl;
+
+    expMultiset();
+
+    cout<<"------------------"<<endl;
+
+    expMap();
     
     cout<<"------------------"<<endl;
     return 0;
