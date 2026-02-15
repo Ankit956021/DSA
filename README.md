@@ -2,12 +2,16 @@
 
 Welcome to my **Data Structures & Algorithms** learning repository! This is my personal DSA practice space where I'm building fundamentals and solving problems step by step.
 
+> **Organized Learning**: Topics are structured in numbered folders for easy navigation and progressive difficulty.
+
 ---
 
 ## 📚 What's Inside?
 
-### 1. **Pattern Programs** (`dsa_patterns.cpp`)
+### 1. **📂 01_Patterns** - Pattern Programming (20 Problems)
 Classic pattern printing problems to master nested loops and logic building.
+
+Location: [`01_Patterns/dsa_patterns.cpp`](01_Patterns/dsa_patterns.cpp)
 
 #### Patterns Covered:
 - ✅ **Pattern 1-10**: Basic square, triangle, and diamond patterns
@@ -23,16 +27,22 @@ Classic pattern printing problems to master nested loops and logic building.
   ```
 - ✅ **Pattern 19**: Full diamond with varying spaces
 - ✅ **Pattern 20**: Hollow diamond pattern
-  ```
-  * * * * * * * *
-  * *     * *
-  *         *
-  ```
 
-### 2. **STL (Standard Template Library)** (`stl.cpp`)
-Understanding C++ STL containers and their operations.
+**How to run:**
+```bash
+cd 01_Patterns
+g++-15 dsa_patterns.cpp -o dsa_patterns
+./dsa_patterns
+```
 
-#### Topics Covered:
+---
+
+### 2. **📦 02_STL** - Standard Template Library (6 Containers)
+Understanding C++ STL containers and their operations with real-world examples.
+
+Location: [`02_STL/stl.cpp`](02_STL/stl.cpp)
+
+#### Containers Covered:
 - 📦 **Vector**: Dynamic arrays with push_back, insert, erase, emplace_back
 - 📋 **List**: Doubly linked lists with front/back operations
 - 📚 **Stack**: LIFO (Last In First Out) - push, pop, top
@@ -40,7 +50,14 @@ Understanding C++ STL containers and their operations.
 - ⚡ **Priority Queue**: Max Heap & Min Heap with priority ordering
 - 🎯 **Set**: Sorted unique elements with O(log n) operations
 
-#### Code Examples:
+**How to run:**
+```bash
+cd 02_STL
+g++-15 stl.cpp -o stl
+./stl
+```
+
+#### STL Code Examples:
 ```cpp
 // Vector
 vector<int> v;
