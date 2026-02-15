@@ -106,7 +106,14 @@ Phase 3: Core DSA (Coming Soon) 🚀
 
 ---
 
-## 💻 How to Run
+## � Quick Navigation
+
+- 📂 **[01_Patterns](01_Patterns/)** - Pattern printing (20 problems)
+- 📦 **[02_STL](02_STL/)** - STL containers guide
+- 📊 **[03_Arrays](03_Arrays/)** - Array operations (Coming Soon)
+- 🔗 **[04_LinkedLists](04_LinkedLists/)** - Linked lists (Coming Soon)
+
+## �💻 How to Run
 
 ### Prerequisites:
 ```bash
@@ -117,7 +124,7 @@ Phase 3: Core DSA (Coming Soon) 🚀
 
 ### Run Pattern Programs:
 ```bash
-cd /path/to/dsa
+cd 01_Patterns
 g++-15 dsa_patterns.cpp -o dsa_patterns
 ./dsa_patterns
 # Enter n value (e.g., 5) to see the pattern
@@ -125,6 +132,7 @@ g++-15 dsa_patterns.cpp -o dsa_patterns
 
 ### Run STL Examples:
 ```bash
+cd 02_STL
 g++-15 stl.cpp -o stl
 ./stl
 ```
@@ -135,12 +143,18 @@ g++-15 stl.cpp -o stl
 
 ```
 dsa/
-├── README.md                 # This file
-├── dsa_patterns.cpp          # 20+ Pattern programs
-├── stl.cpp                   # STL containers demo
-├── new.cpp                   # Basic I/O programs
-├── cc.cpp                    # C++ practice
-└── .gitignore               # Git ignore rules
+├── README.md                          # Main documentation
+├── 01_Patterns/                       # Pattern programming
+│   ├── README.md                      # Pattern guide
+│   └── dsa_patterns.cpp               # 20+ patterns
+├── 02_STL/                            # Standard Template Library
+│   ├── README.md                      # STL container guide
+│   └── stl.cpp                        # Vector, Stack, Queue, Set, etc.
+├── 03_Arrays/                         # Arrays & Strings (Coming Soon)
+│   └── README.md                      # Array operations guide
+├── 04_LinkedLists/                    # Linked Lists (Coming Soon)
+│   └── README.md                      # Linked list guide
+└── .gitignore                         # Git ignore rules
 ```
 
 ---
@@ -286,4 +300,4 @@ This repository is open for educational purposes. Feel free to use, modify, and 
 
 ---
 
-Last Updated: **15 February 2026** | Total Commits: 4 | Files: 6
+Last Updated: **14 February 2026**
