@@ -7,6 +7,7 @@
 #include<map>
 #include<unordered_map>
 #include<unordered_set>
+#include<algorithm>
 
 
 using namespace std;
@@ -274,6 +275,95 @@ void expMap(){
     cout << endl;
 }
 
+
+void expMultimap(){
+    // Multimap is a container in C++ that stores KEY-VALUE pairs in sorted order (by KEY) but allows duplicate keys. 
+    // Each KEY can have multiple VALUES associated with it. 
+    // Internally implemented as Red-Black Tree (Balanced BST)
+    // Time Complexity: O(log n) for insert, find, erase
+
+    multimap<int, int> mmpp;
+    
+    // Inserting key-value pairs
+    mmpp.insert({1, 10});      // Key: 1, Value: 10
+    mmpp.insert({1, 15});      // Key: 1, Value: 15 (duplicate key)
+    mmpp.insert({2, 20});
+    mmpp.insert({3, 30});
+    
+    // Print all key-value pairs (sorted by key)
+    cout << "Multimap contents (key -> value):" << endl;
+    for(auto it : mmpp){
+        cout << it.first << " -> " << it.second << endl;
+    }
+    cout << endl;
+    
+    // Find all values for a specific key
+    auto range = mmpp.equal_range(1);
+    cout << "Values for key 1:" << endl;
+    for(auto it = range.first; it != range.second; ++it){
+        cout << it->second << endl;  // Output: 10 and 15
+    }
+    
+}
+
+
+void unordered_map_example(){
+    // Unordered Map is a container in C++ that stores KEY-VALUE pairs in an unordered manner. 
+    // It is implemented as a hash table and provides average O(1) time complexity for insert, find, and erase operations. 
+    // However, it does not maintain any order of the keys.
+
+    unordered_map<string, int> umpp;
+    
+    umpp["Ankit"] = 95;
+    umpp["Raj"] = 87;
+    umpp["Priya"] = 92;
+    
+    cout << "Unordered Map contents (key -> value):" << endl;
+    for(auto it : umpp){
+        cout << it.first << " -> " << it.second << endl;  // Output may be in any order
+    }
+    cout << endl;
+}   
+
+
+void expExtra(){
+    vector<int> a = {5, 2, 9, 1, 5, 6};
+    int n = a.size();
+    sort(a.begin(), a.end());
+        for ( auto it =a.begin() ; it != a.end() ; it++){
+            cout<< *it <<" ";
+        }
+        cout<<endl;
+    
+    pair<int, int> p1[] = { {1, 10}, {2, 20}, {3, 30} , {4, 40} };
+    sort(p1, p1 + 4, greater<pair<int, int>>());  // Sorts the array of pairs based on the first element of the pair (the key)
+    
+     for ( auto it =p1 ; it != p1 + 4 ; it++){
+        cout<< it->first <<" -> "<< it->second <<endl;
+     }
+    
+
+     cout<<"this is extra"<<endl;
+
+     int num =9;
+     int cnt = __builtin_popcount(num);  // Counts the number of set bits (1s) in the binary representation of num
+     cout<<"Number of set bits in "<< num <<" is: "<< cnt <<endl;
+
+
+    string rp = "125";
+
+    do{
+        cout<<rp<<endl;
+    }while (next_permutation(rp.begin(), rp.end()));  // Generates the next lexicographical permutation of the string rp
+    
+    int max_num = *max_element(a.begin(), a.end());  // Finds the maximum element in the vector a
+    cout<<"Maximum element in the vector is: "<< max_num <<endl;    
+
+    int min_num = *min_element(a.begin(), a.end());  // Finds the minimum element in the vector a
+    cout<<"Minimum element in the vector is: "<< min_num <<endl;    
+
+}
+
 int main(){
     vectorexp();
 
@@ -306,5 +396,18 @@ int main(){
     expMap();
     
     cout<<"------------------"<<endl;
+
+
+    expMultimap();
+    cout<<"------------------"<<endl;
+
+
+
+    unordered_map_example();
+    cout<<"------------------"<<endl;
+
+    expExtra(); 
+    cout<<"------------------"<<endl;
+
     return 0;
 }
